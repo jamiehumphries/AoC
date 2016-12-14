@@ -5,7 +5,7 @@
 // D = ruthenium
 // E = plutonium
 var floors = [
-  ['AG', 'AM'],
+  ['AG', 'AM', 'FG', 'FM', 'GG', 'GM'],
   ['BG', 'CG', 'DG', 'EG'],
   ['BM', 'CM', 'DM', 'EM'],
   []
