@@ -1,0 +1,8 @@
+{
+  "name": "aoc-2016-14",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "md5": "^2.2.1"
+  }
+}

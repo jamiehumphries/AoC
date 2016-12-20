@@ -1,0 +1,8 @@
+{
+  "name": "aoc-2016-19",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "double-ended-queue": "^2.1.0-0"
+  }
+}
