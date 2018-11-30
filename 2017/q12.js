@@ -2012,16 +2012,16 @@ lines.forEach(line => {
 function union(g1, g2) {
   return new Set([...g1, ...g2]);
 }
-function getGroup(program, knownGroup) {
+function getRegion(program, knownGroup) {
   knownGroup = knownGroup || new Set();
   let group = new Set([program, ...knownGroup]);
   pipes[program].filter(conn => !knownGroup.has(conn)).forEach(conn => {
-    group = union(group, getGroup(conn, group));
+    group = union(group, getRegion(conn, group));
   });
   return group;
 }
 
-const group0 = getGroup('0');
+const group0 = getRegion('0');
 const result1 = group0.size;
 result1;
 
@@ -2036,7 +2036,7 @@ Object.keys(pipes).forEach(program => {
   if (allGrouped.has(program)) {
     return;
   }
-  const group = getGroup(program);
+  const group = getRegion(program);
   allGrouped = union(allGrouped, group);
   groups++;
 });
