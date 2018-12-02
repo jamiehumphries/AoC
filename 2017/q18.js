@@ -119,15 +119,15 @@ const program1 = new Program(1);
 program0.partner = program1;
 program1.partner = program0;
 while (!program0.stopped || !program1.stopped) {
-  const loc0 = loc[program0.position];
+  const loc0 = lines[program0.position];
   if (loc0) {
-    eval('program0.' + loc[program0.position]);
+    eval('program0.' + lines[program0.position]);
   } else {
     program0.stopped = true;
   }
-  const loc1 = loc[program1.position];
+  const loc1 = lines[program1.position];
   if (loc1) {
-    eval('program1.' + loc[program1.position]);
+    eval('program1.' + lines[program1.position]);
   } else {
     program1.stopped = true;
   }

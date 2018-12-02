@@ -209,5 +209,5 @@ while (i++ < iterations) {
   });
   image = join(transformed);
 }
-const result1 = (image.join('').match(/#/g) || []).length;
-result1;
+const result = (image.join('').match(/#/g) || []).length;
+result;
