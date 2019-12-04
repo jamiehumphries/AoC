@@ -1,0 +1,13 @@
+{
+  "name": "aoc",
+  "version": "1.0.0",
+  "description": "Jamie’s Advent of Code answers",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiehumphries/AoC.git"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
