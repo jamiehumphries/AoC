@@ -31,23 +31,18 @@ function getCellPower(x, y, size) {
   let cellPower = 0;
   if (size === 1) {
     cellPower += getPowerLevel(x, y);
+  } else if (size % 2 === 0) {
+    const half = size / 2;
+    cellPower += getCellPower(x, y, half);
+    cellPower += getCellPower(x, y + half, half);
+    cellPower += getCellPower(x + half, y, half);
+    cellPower += getCellPower(x + half, y + half, half);
   } else {
-    const factor = getLowestFactorOtherThanOne(size);
-    if (factor === size) {
-      cellPower += getCellPower(x, y, 1);
-      cellPower += getCellPower(x + 1, y + 1, size - 1);
-      for (let d = 1; d < size; d++) {
-        cellPower += getCellPower(x, y + d, 1);
-        cellPower += getCellPower(x + d, y, 1);
-      }
-    } else {
-      const segmentSize = size / factor;
-      for (let x0 = x; x0 < x + size; x0 += segmentSize) {
-        for (let y0 = y; y0 < y + size; y0 += segmentSize) {
-          cellPower += getCellPower(x0, y0, segmentSize);
-        }
-      }
-    }
+    cellPower += getCellPower(x, y, size - 1);
+    cellPower += getCellPower(x + 1, y + 1, size - 1);
+    cellPower -= getCellPower(x + 1, y + 1, size - 2);
+    cellPower += getCellPower(x, y + size - 1, 1);
+    cellPower += getCellPower(x + size - 1, y, 1);
   }
   sizeCache[[x, y]] = cellPower;
   return cellPower;
