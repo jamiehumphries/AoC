@@ -15,7 +15,7 @@ for (let noun = 0; noun <= 99; noun++) {
     const program = _.clone(input)
     program[1] = noun
     program[2] = verb
-    const output = intcode.run(program)
+    const output = intcode.run(program)[0]
     if (output === target) {
       console.log(100 * noun + verb)
       break
