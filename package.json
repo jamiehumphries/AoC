@@ -8,6 +8,7 @@
     "url": "git+https://github.com/jamiehumphries/AoC.git"
   },
   "dependencies": {
+    "jimp": "^0.9.3",
     "lodash": "^4.17.15"
   }
 }
